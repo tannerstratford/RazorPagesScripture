@@ -1,0 +1,37 @@
+@page
+@model RazorPagesScripture.Pages_Scriptures.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Scripture</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Scripture.CreationDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Scripture.CreationDate)
+        </dd>
+        <dt class="col-sm-2">
+            Scripture
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Scripture.Book) @Html.DisplayFor(model => model.Scripture.Chapter):@Html.DisplayFor(model => model.Scripture.Verse)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Scripture.Entry)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Scripture.Entry)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Scripture.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
